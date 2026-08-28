@@ -354,3 +354,14 @@
 2026-08-28 08:10:26,570 [INFO] WebApp:593 - Web application path used C:\ST\STM32CubeIDE_1.19.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.15.0.202507011659\db\plugins\mcufinder\reactClient1\index.html
 2026-08-28 08:10:26,991 [INFO] UserAuth:487 - Internet connection configuration mode: 1
 2026-08-28 08:13:35,193 [INFO] WebApp:191 - Connection restablished
+2026-08-28 08:40:14,487 [ERROR] AdobePublisher:162 - Exception while opening the connection: java.net.SocketTimeoutException: Read timed out
+2026-08-28 08:40:16,550 [ERROR] AdobePublisher:162 - Exception while opening the connection: java.net.SocketTimeoutException: Read timed out
+2026-08-28 08:40:18,591 [ERROR] AdobePublisher:162 - Exception while opening the connection: java.net.SocketTimeoutException: Read timed out
+2026-08-28 08:40:20,637 [ERROR] AdobePublisher:162 - Exception while opening the connection: java.net.SocketTimeoutException: Read timed out
+2026-08-28 08:40:22,659 [ERROR] AdobePublisher:162 - Exception while opening the connection: java.net.SocketTimeoutException: Read timed out
+2026-08-28 08:40:24,742 [ERROR] AdobePublisher:162 - Exception while opening the connection: java.net.SocketTimeoutException: Read timed out
+2026-08-28 08:40:26,791 [ERROR] AdobePublisher:162 - Exception while opening the connection: java.net.SocketTimeoutException: Read timed out
+2026-08-28 08:40:28,851 [ERROR] AdobePublisher:162 - Exception while opening the connection: java.net.SocketTimeoutException: Read timed out
+2026-08-28 08:40:30,915 [ERROR] AdobePublisher:162 - Exception while opening the connection: java.net.SocketTimeoutException: Read timed out
+2026-08-28 08:40:32,955 [ERROR] AdobePublisher:162 - Exception while opening the connection: java.net.SocketTimeoutException: Read timed out
+2026-08-28 08:40:35,426 [ERROR] LogOutputStream:75 - [STDERR_REDIRECT] 
