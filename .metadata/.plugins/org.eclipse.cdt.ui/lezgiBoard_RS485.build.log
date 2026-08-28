@@ -1,0 +1,10 @@
+15:50:59 **** Incremental Build of configuration Debug for project lezgiBoard_RS485 ****
+make -j4 all 
+arm-none-eabi-size  lezgiBoard_RS485.elf 
+   text	   data	    bss	    dec	    hex	filename
+ 121040	    120	  37040	 158200	  269f8	lezgiBoard_RS485.elf
+Finished building: default.size.stdout
+ 
+
+15:51:00 Build Finished. 0 errors, 0 warnings. (took 1s.224ms)
+

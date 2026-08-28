@@ -1,0 +1,4 @@
+D:/my_Projects/Electronic/STM32/F1/CubeIDE/Libraries/LnkList/LnkList.cpp:3:1:LinkedList::LinkedList()	1
+D:/my_Projects/Electronic/STM32/F1/CubeIDE/Libraries/LnkList/LnkList.cpp:8:6:void LinkedList::FetchNextNode(KeyHeader*)	3
+D:/my_Projects/Electronic/STM32/F1/CubeIDE/Libraries/LnkList/LnkList.cpp:25:20:HAL_StatusTypeDef LinkedList::SetCommand(HeaderType, KeyState, uint8_t, KeyNum)	2
+D:/my_Projects/Electronic/STM32/F1/CubeIDE/Libraries/LnkList/LnkList.cpp:46:6:void LinkedList::SendNext(SaveKeyProtocol*)	2
