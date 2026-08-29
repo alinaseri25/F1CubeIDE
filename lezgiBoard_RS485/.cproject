@@ -31,8 +31,8 @@
 									<listOptionValue builtIn="false" value="DEBUG"/>
 								</option>
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.assembler.option.includepaths.786165291" name="Include paths (-I)" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.assembler.option.includepaths" valueType="includePath">
-									<listOptionValue builtIn="false" value="&quot;D:\my_Projects\Electronic\STM32\F1\CubeIDE\Libraries\ArduinoJson\src&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;D:\my_Projects\Electronic\STM32\F1\CubeIDE\Libraries\jsonPacket&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;../../../CubeIDE_Libraries/ArduinoJson\src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;../../../CubeIDE_Libraries/jsonPacket&quot;"/>
 								</option>
 								<inputType id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.assembler.input.764935829" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.assembler.input"/>
 							</tool>
@@ -63,8 +63,8 @@
 									<listOptionValue builtIn="false" value="../Middlewares/Third_Party/LwIP/src/include/posix"/>
 									<listOptionValue builtIn="false" value="../Middlewares/Third_Party/LwIP/src/include/posix/sys"/>
 									<listOptionValue builtIn="false" value="../Middlewares/Third_Party/LwIP/system/arch"/>
-									<listOptionValue builtIn="false" value="&quot;D:\my_Projects\Electronic\STM32\F1\CubeIDE\Libraries\ArduinoJson\src&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;D:\my_Projects\Electronic\STM32\F1\CubeIDE\Libraries\jsonPacket&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;../../../CubeIDE_Libraries/ArduinoJson\src&quot;"/>
+									<listOptionValue builtIn="false" value="../../../CubeIDE_Libraries/jsonPacket"/>
 								</option>
 								<inputType id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.input.c.1162380927" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.input.c"/>
 							</tool>
@@ -95,8 +95,8 @@
 									<listOptionValue builtIn="false" value="../Middlewares/Third_Party/LwIP/src/include/posix"/>
 									<listOptionValue builtIn="false" value="../Middlewares/Third_Party/LwIP/src/include/posix/sys"/>
 									<listOptionValue builtIn="false" value="../Middlewares/Third_Party/LwIP/system/arch"/>
-									<listOptionValue builtIn="false" value="&quot;D:\my_Projects\Electronic\STM32\F1\CubeIDE\Libraries\ArduinoJson\src&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;D:\my_Projects\Electronic\STM32\F1\CubeIDE\Libraries\jsonPacket&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;../../../CubeIDE_Libraries/ArduinoJson\src&quot;"/>
+									<listOptionValue builtIn="false" value="../../../CubeIDE_Libraries/jsonPacket"/>
 								</option>
 								<inputType id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.cpp.compiler.input.cpp.1193444954" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.cpp.compiler.input.cpp"/>
 							</tool>
@@ -156,8 +156,8 @@
 							<tool id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.assembler.2147330793" name="MCU/MPU GCC Assembler" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.assembler">
 								<option id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.assembler.option.debuglevel.323422705" name="Debug level" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.assembler.option.debuglevel" value="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.assembler.option.debuglevel.value.g0" valueType="enumerated"/>
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.assembler.option.includepaths.528114670" name="Include paths (-I)" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.assembler.option.includepaths" valueType="includePath">
-									<listOptionValue builtIn="false" value="&quot;D:\my_Projects\Electronic\STM32\F1\CubeIDE\Libraries\ArduinoJson\src&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;D:\my_Projects\Electronic\STM32\F1\CubeIDE\Libraries\jsonPacket&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;../../../CubeIDE_Libraries/ArduinoJson\src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;../../../CubeIDE_Libraries/jsonPacket&quot;"/>
 								</option>
 								<inputType id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.assembler.input.61297706" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.assembler.input"/>
 							</tool>

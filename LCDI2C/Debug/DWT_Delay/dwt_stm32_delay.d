@@ -1,6 +1,6 @@
 DWT_Delay/dwt_stm32_delay.o: \
- D:/my_Projects/Electronic/STM32/F1/CubeIDE/Libraries/DWT_Delay/dwt_stm32_delay.c \
- D:/my_Projects/Electronic/STM32/F1/CubeIDE/Libraries/DWT_Delay/dwt_stm32_delay.h \
+ D:/technicalDepartment/software/CubeIDE_Libraries/DWT_Delay/dwt_stm32_delay.c \
+ D:/technicalDepartment/software/CubeIDE_Libraries/DWT_Delay/dwt_stm32_delay.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h \
  ../Core/Inc/stm32f1xx_hal_conf.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h \
@@ -28,7 +28,7 @@ DWT_Delay/dwt_stm32_delay.o: \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h
-D:/my_Projects/Electronic/STM32/F1/CubeIDE/Libraries/DWT_Delay/dwt_stm32_delay.h:
+D:/technicalDepartment/software/CubeIDE_Libraries/DWT_Delay/dwt_stm32_delay.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:
 ../Core/Inc/stm32f1xx_hal_conf.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:

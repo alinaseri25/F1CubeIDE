@@ -1,6 +1,6 @@
 TCP_Server/tcp_server.o: \
- D:/my_Projects/Electronic/STM32/F1/CubeIDE/Libraries/TCP_Server/tcp_server.cpp \
- D:/my_Projects/Electronic/STM32/F1/CubeIDE/Libraries/TCP_Server/tcp_server.hpp \
+ D:/technicalDepartment/software/CubeIDE_Libraries/TCP_Server/tcp_server.cpp \
+ D:/technicalDepartment/software/CubeIDE_Libraries/TCP_Server/tcp_server.hpp \
  ../Middlewares/Third_Party/LwIP/src/include/lwip/debug.h \
  ../Middlewares/Third_Party/LwIP/src/include/lwip/arch.h \
  ../Middlewares/Third_Party/LwIP/system/arch/cc.h \
@@ -55,7 +55,7 @@ TCP_Server/tcp_server.o: \
  ../Middlewares/Third_Party/LwIP/src/include/lwip/prot/ip.h \
  ../Middlewares/Third_Party/LwIP/src/include/lwip/icmp.h \
  ../Middlewares/Third_Party/LwIP/src/include/lwip/prot/icmp.h
-D:/my_Projects/Electronic/STM32/F1/CubeIDE/Libraries/TCP_Server/tcp_server.hpp:
+D:/technicalDepartment/software/CubeIDE_Libraries/TCP_Server/tcp_server.hpp:
 ../Middlewares/Third_Party/LwIP/src/include/lwip/debug.h:
 ../Middlewares/Third_Party/LwIP/src/include/lwip/arch.h:
 ../Middlewares/Third_Party/LwIP/system/arch/cc.h:

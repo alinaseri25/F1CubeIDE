@@ -1,6 +1,6 @@
 ################################################################################
 # Automatically-generated file. Do not edit!
-# Toolchain: GNU Tools for STM32 (13.3.rel1)
+# Toolchain: GNU Tools for STM32 (14.3.rel1)
 ################################################################################
 
 -include ../makefile.init
@@ -60,8 +60,8 @@ all: main-build
 main-build: TUT_STEPPER_RAS.elf secondary-outputs
 
 # Tool invocations
-TUT_STEPPER_RAS.elf TUT_STEPPER_RAS.map: $(OBJS) $(USER_OBJS) D:\my_Projects\Electronic\STM32\F1\CubeIDE\TUT_STEPPER_RAS\STM32F446RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "TUT_STEPPER_RAS.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"D:\my_Projects\Electronic\STM32\F1\CubeIDE\TUT_STEPPER_RAS\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TUT_STEPPER_RAS.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+TUT_STEPPER_RAS.elf TUT_STEPPER_RAS.map: $(OBJS) $(USER_OBJS) D:\technicalDepartment\software\F1CubeIDE\TUT_STEPPER_RAS\STM32F446RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "TUT_STEPPER_RAS.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"D:\technicalDepartment\software\F1CubeIDE\TUT_STEPPER_RAS\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TUT_STEPPER_RAS.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

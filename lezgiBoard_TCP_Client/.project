@@ -34,7 +34,7 @@
 		<link>
 			<name>TCP_Client</name>
 			<type>2</type>
-			<location>D:/my_Projects/Electronic/STM32/F1/CubeIDE/Libraries/TCP_Client</location>
+			<locationURI>$%7BPARENT-2-PROJECT_LOC%7D/CubeIDE_Libraries/TCP_Client</locationURI>
 		</link>
 	</linkedResources>
 </projectDescription>

@@ -1,6 +1,6 @@
 ################################################################################
 # Automatically-generated file. Do not edit!
-# Toolchain: GNU Tools for STM32 (13.3.rel1)
+# Toolchain: GNU Tools for STM32 (14.3.rel1)
 ################################################################################
 
 -include ../makefile.init
@@ -9,14 +9,9 @@ RM := rm -rf
 
 # All of the sources participating in the build are defined here
 -include sources.mk
--include SaveKey/subdir.mk
--include MatrixKeyBoard/subdir.mk
--include LnkList/subdir.mk
 -include Drivers/STM32F1xx_HAL_Driver/Src/subdir.mk
--include DWT_Delay/subdir.mk
 -include Core/Startup/subdir.mk
 -include Core/Src/subdir.mk
--include 74HC595/subdir.mk
 -include objects.mk
 
 ifneq ($(MAKECMDGOALS),clean)
@@ -89,8 +84,8 @@ all: main-build
 main-build: Switch24Queue.elf secondary-outputs
 
 # Tool invocations
-Switch24Queue.elf Switch24Queue.map: $(OBJS) $(USER_OBJS) D:\my_Projects\Electronic\STM32\F1\CubeIDE\Switch24Queue\STM32F107RCTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-g++ -o "Switch24Queue.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"D:\my_Projects\Electronic\STM32\F1\CubeIDE\Switch24Queue\STM32F107RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Switch24Queue.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Switch24Queue.elf Switch24Queue.map: $(OBJS) $(USER_OBJS) D:\technicalDepartment\software\F1CubeIDE\Switch24Queue\STM32F107RCTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-g++ -o "Switch24Queue.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"D:\technicalDepartment\software\F1CubeIDE\Switch24Queue\STM32F107RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Switch24Queue.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

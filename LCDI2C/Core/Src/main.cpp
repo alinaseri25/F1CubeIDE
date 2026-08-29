@@ -24,8 +24,8 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "usbd_cdc_if.h"
-#include "../../../Libraries/DWT_Delay/dwt_stm32_delay.h"
-#include "../../../Libraries/LiquidCrystal_I2C/LCD_I2C.hpp"
+#include "LCD_I2C.hpp"
+#include "dwt_stm32_delay.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/

@@ -1,6 +1,6 @@
 LiquidCrystal_I2C/LCD_I2C.o: \
- D:/my_Projects/Electronic/STM32/F1/CubeIDE/Libraries/LiquidCrystal_I2C/LCD_I2C.cpp \
- D:/my_Projects/Electronic/STM32/F1/CubeIDE/Libraries/LiquidCrystal_I2C/LCD_I2C.hpp \
+ D:/technicalDepartment/software/CubeIDE_Libraries/LiquidCrystal_I2C/LCD_I2C.cpp \
+ D:/technicalDepartment/software/CubeIDE_Libraries/LiquidCrystal_I2C/LCD_I2C.hpp \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h \
  ../Core/Inc/stm32f1xx_hal_conf.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h \
@@ -28,8 +28,8 @@ LiquidCrystal_I2C/LCD_I2C.o: \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h \
- d:\my_projects\electronic\stm32\f1\cubeide\libraries\dwt_delay\dwt_stm32_delay.h
-D:/my_Projects/Electronic/STM32/F1/CubeIDE/Libraries/LiquidCrystal_I2C/LCD_I2C.hpp:
+ D:/technicalDepartment/software/CubeIDE_Libraries/LiquidCrystal_I2C/../DWT_Delay/dwt_stm32_delay.h
+D:/technicalDepartment/software/CubeIDE_Libraries/LiquidCrystal_I2C/LCD_I2C.hpp:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:
 ../Core/Inc/stm32f1xx_hal_conf.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:
@@ -57,4 +57,4 @@ D:/my_Projects/Electronic/STM32/F1/CubeIDE/Libraries/LiquidCrystal_I2C/LCD_I2C.h
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h:
-d:\my_projects\electronic\stm32\f1\cubeide\libraries\dwt_delay\dwt_stm32_delay.h:
+D:/technicalDepartment/software/CubeIDE_Libraries/LiquidCrystal_I2C/../DWT_Delay/dwt_stm32_delay.h:

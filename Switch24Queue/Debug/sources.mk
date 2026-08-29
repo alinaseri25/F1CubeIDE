@@ -1,6 +1,6 @@
 ################################################################################
 # Automatically-generated file. Do not edit!
-# Toolchain: GNU Tools for STM32 (13.3.rel1)
+# Toolchain: GNU Tools for STM32 (14.3.rel1)
 ################################################################################
 
 C++M_SRCS := 
@@ -38,12 +38,7 @@ CPP_DEPS :=
 
 # Every subdirectory with source files must be described here
 SUBDIRS := \
-74HC595 \
 Core/Src \
 Core/Startup \
-DWT_Delay \
 Drivers/STM32F1xx_HAL_Driver/Src \
-LnkList \
-MatrixKeyBoard \
-SaveKey \
 

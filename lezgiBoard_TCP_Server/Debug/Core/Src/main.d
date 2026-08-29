@@ -61,7 +61,7 @@ Core/Src/main.o: ../Core/Src/main.cpp ../Core/Inc/main.h \
  ../Middlewares/Third_Party/LwIP/src/include/lwip/prot/udp.h \
  ../Middlewares/Third_Party/LwIP/src/include/lwip/timeouts.h \
  ../LWIP/Target/ethernetif.h \
- D:/my_Projects/Electronic/STM32/F1/CubeIDE/Libraries/TCP_Server/tcp_server.hpp \
+ ../../../CubeIDE_Libraries/TCP_Server/tcp_server.hpp \
  ../Middlewares/Third_Party/LwIP/src/include/lwip/tcp.h \
  ../Middlewares/Third_Party/LwIP/src/include/lwip/icmp.h \
  ../Middlewares/Third_Party/LwIP/src/include/lwip/prot/icmp.h
@@ -128,7 +128,7 @@ Core/Src/main.o: ../Core/Src/main.cpp ../Core/Inc/main.h \
 ../Middlewares/Third_Party/LwIP/src/include/lwip/prot/udp.h:
 ../Middlewares/Third_Party/LwIP/src/include/lwip/timeouts.h:
 ../LWIP/Target/ethernetif.h:
-D:/my_Projects/Electronic/STM32/F1/CubeIDE/Libraries/TCP_Server/tcp_server.hpp:
+../../../CubeIDE_Libraries/TCP_Server/tcp_server.hpp:
 ../Middlewares/Third_Party/LwIP/src/include/lwip/tcp.h:
 ../Middlewares/Third_Party/LwIP/src/include/lwip/icmp.h:
 ../Middlewares/Third_Party/LwIP/src/include/lwip/prot/icmp.h:

@@ -1,6 +1,6 @@
 TCP_Client/tcp_client.o: \
- D:/my_Projects/Electronic/STM32/F1/CubeIDE/Libraries/TCP_Client/tcp_client.cpp \
- D:/my_Projects/Electronic/STM32/F1/CubeIDE/Libraries/TCP_Client/tcp_client.hpp \
+ D:/technicalDepartment/software/CubeIDE_Libraries/TCP_Client/tcp_client.cpp \
+ ../../../CubeIDE_Libraries/TCP_Client/tcp_client.hpp \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h \
  ../Core/Inc/stm32f1xx_hal_conf.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h \
@@ -55,7 +55,7 @@ TCP_Client/tcp_client.o: \
  ../Middlewares/Third_Party/LwIP/src/include/lwip/prot/ip.h \
  ../Middlewares/Third_Party/LwIP/src/include/lwip/icmp.h \
  ../Middlewares/Third_Party/LwIP/src/include/lwip/prot/icmp.h
-D:/my_Projects/Electronic/STM32/F1/CubeIDE/Libraries/TCP_Client/tcp_client.hpp:
+../../../CubeIDE_Libraries/TCP_Client/tcp_client.hpp:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:
 ../Core/Inc/stm32f1xx_hal_conf.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:

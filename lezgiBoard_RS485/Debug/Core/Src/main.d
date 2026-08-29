@@ -61,11 +61,11 @@ Core/Src/main.o: ../Core/Src/main.cpp ../Core/Inc/main.h \
  ../Middlewares/Third_Party/LwIP/src/include/lwip/prot/udp.h \
  ../Middlewares/Third_Party/LwIP/src/include/lwip/timeouts.h \
  ../LWIP/Target/ethernetif.h ../Core/Inc/stm32f1xx_it.h \
- D:/my_Projects/Electronic/STM32/F1/CubeIDE/Libraries/jsonPacket/jsonpacket.hpp \
- D:/my_Projects/Electronic/STM32/F1/CubeIDE/Libraries/jsonPacket/packetStructs.hpp \
- D:/my_Projects/Electronic/STM32/F1/CubeIDE/Libraries/ArduinoJson/src/ArduinoJson.h \
- D:/my_Projects/Electronic/STM32/F1/CubeIDE/Libraries/ArduinoJson/src/ArduinoJson.hpp \
- D:/my_Projects/Electronic/STM32/F1/CubeIDE/Libraries/ArduinoJson/src/ArduinoJson/Configuration.hpp
+ ../../../CubeIDE_Libraries/jsonPacket/jsonpacket.hpp \
+ ../../../CubeIDE_Libraries/jsonPacket/packetStructs.hpp \
+ ../../../CubeIDE_Libraries/ArduinoJson/src/ArduinoJson.h \
+ ../../../CubeIDE_Libraries/ArduinoJson/src/ArduinoJson.hpp \
+ ../../../CubeIDE_Libraries/ArduinoJson/src/ArduinoJson/Configuration.hpp
 ../Core/Inc/main.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:
 ../Core/Inc/stm32f1xx_hal_conf.h:
@@ -130,8 +130,8 @@ Core/Src/main.o: ../Core/Src/main.cpp ../Core/Inc/main.h \
 ../Middlewares/Third_Party/LwIP/src/include/lwip/timeouts.h:
 ../LWIP/Target/ethernetif.h:
 ../Core/Inc/stm32f1xx_it.h:
-D:/my_Projects/Electronic/STM32/F1/CubeIDE/Libraries/jsonPacket/jsonpacket.hpp:
-D:/my_Projects/Electronic/STM32/F1/CubeIDE/Libraries/jsonPacket/packetStructs.hpp:
-D:/my_Projects/Electronic/STM32/F1/CubeIDE/Libraries/ArduinoJson/src/ArduinoJson.h:
-D:/my_Projects/Electronic/STM32/F1/CubeIDE/Libraries/ArduinoJson/src/ArduinoJson.hpp:
-D:/my_Projects/Electronic/STM32/F1/CubeIDE/Libraries/ArduinoJson/src/ArduinoJson/Configuration.hpp:
+../../../CubeIDE_Libraries/jsonPacket/jsonpacket.hpp:
+../../../CubeIDE_Libraries/jsonPacket/packetStructs.hpp:
+../../../CubeIDE_Libraries/ArduinoJson/src/ArduinoJson.h:
+../../../CubeIDE_Libraries/ArduinoJson/src/ArduinoJson.hpp:
+../../../CubeIDE_Libraries/ArduinoJson/src/ArduinoJson/Configuration.hpp:

@@ -34,7 +34,7 @@
 		<link>
 			<name>jsonPacket</name>
 			<type>2</type>
-			<location>D:/my_Projects/Electronic/STM32/F1/CubeIDE/Libraries/jsonPacket</location>
+			<locationURI>$%7BPARENT-2-PROJECT_LOC%7D/CubeIDE_Libraries/jsonPacket</locationURI>
 		</link>
 	</linkedResources>
 </projectDescription>

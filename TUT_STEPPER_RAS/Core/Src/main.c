@@ -175,7 +175,7 @@ void stepper_step_angle (float angle, int direction, int rpm)
 }
 
 
-uint16_t ADC_VAL;
+uint32_t ADC_VAL;
 float voltage;
 float angle;
 float currentAngle = 0;

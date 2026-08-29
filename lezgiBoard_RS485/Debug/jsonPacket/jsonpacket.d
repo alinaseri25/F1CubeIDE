@@ -1,7 +1,7 @@
 jsonPacket/jsonpacket.o: \
- D:/my_Projects/Electronic/STM32/F1/CubeIDE/Libraries/jsonPacket/jsonpacket.cpp \
- D:/my_Projects/Electronic/STM32/F1/CubeIDE/Libraries/jsonPacket/jsonpacket.hpp \
- D:/my_Projects/Electronic/STM32/F1/CubeIDE/Libraries/jsonPacket/packetStructs.hpp \
+ D:/technicalDepartment/software/CubeIDE_Libraries/jsonPacket/jsonpacket.cpp \
+ D:/technicalDepartment/software/CubeIDE_Libraries/jsonPacket/jsonpacket.hpp \
+ D:/technicalDepartment/software/CubeIDE_Libraries/jsonPacket/packetStructs.hpp \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h \
  ../Core/Inc/stm32f1xx_hal_conf.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h \
@@ -29,11 +29,11 @@ jsonPacket/jsonpacket.o: \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h \
- D:/my_Projects/Electronic/STM32/F1/CubeIDE/Libraries/ArduinoJson/src/ArduinoJson.h \
- D:/my_Projects/Electronic/STM32/F1/CubeIDE/Libraries/ArduinoJson/src/ArduinoJson.hpp \
- D:/my_Projects/Electronic/STM32/F1/CubeIDE/Libraries/ArduinoJson/src/ArduinoJson/Configuration.hpp
-D:/my_Projects/Electronic/STM32/F1/CubeIDE/Libraries/jsonPacket/jsonpacket.hpp:
-D:/my_Projects/Electronic/STM32/F1/CubeIDE/Libraries/jsonPacket/packetStructs.hpp:
+ ../../../CubeIDE_Libraries/ArduinoJson/src/ArduinoJson.h \
+ ../../../CubeIDE_Libraries/ArduinoJson/src/ArduinoJson.hpp \
+ ../../../CubeIDE_Libraries/ArduinoJson/src/ArduinoJson/Configuration.hpp
+D:/technicalDepartment/software/CubeIDE_Libraries/jsonPacket/jsonpacket.hpp:
+D:/technicalDepartment/software/CubeIDE_Libraries/jsonPacket/packetStructs.hpp:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:
 ../Core/Inc/stm32f1xx_hal_conf.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:
@@ -61,6 +61,6 @@ D:/my_Projects/Electronic/STM32/F1/CubeIDE/Libraries/jsonPacket/packetStructs.hp
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h:
-D:/my_Projects/Electronic/STM32/F1/CubeIDE/Libraries/ArduinoJson/src/ArduinoJson.h:
-D:/my_Projects/Electronic/STM32/F1/CubeIDE/Libraries/ArduinoJson/src/ArduinoJson.hpp:
-D:/my_Projects/Electronic/STM32/F1/CubeIDE/Libraries/ArduinoJson/src/ArduinoJson/Configuration.hpp:
+../../../CubeIDE_Libraries/ArduinoJson/src/ArduinoJson.h:
+../../../CubeIDE_Libraries/ArduinoJson/src/ArduinoJson.hpp:
+../../../CubeIDE_Libraries/ArduinoJson/src/ArduinoJson/Configuration.hpp:

@@ -77,8 +77,8 @@
 									<listOptionValue builtIn="false" value="../USB_DEVICE/Target"/>
 									<listOptionValue builtIn="false" value="../Middlewares/ST/STM32_USB_Device_Library/Core/Inc"/>
 									<listOptionValue builtIn="false" value="../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc"/>
-									<listOptionValue builtIn="false" value="&quot;D:\my_Projects\Electronic\STM32\F1\CubeIDE\Libraries\ArduinoJson&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;D:\my_Projects\Electronic\STM32\F1\CubeIDE\Libraries\ArduinoJson\src\ArduinoJson\Array&quot;"/>
+									<listOptionValue builtIn="false" value="../../../CubeIDE_Libraries/ArduinoJson"/>
+									<listOptionValue builtIn="false" value="&quot;../../../CubeIDE_Libraries/ArduinoJson\src\ArduinoJson\Array&quot;"/>
 								</option>
 								<inputType id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.cpp.compiler.input.cpp.314165107" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.cpp.compiler.input.cpp"/>
 							</tool>

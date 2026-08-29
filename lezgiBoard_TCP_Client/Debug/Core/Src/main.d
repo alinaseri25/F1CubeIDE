@@ -1,5 +1,5 @@
 Core/Src/main.o: ../Core/Src/main.cpp \
- D:/my_Projects/Electronic/STM32/F1/CubeIDE/Libraries/TCP_Client/tcp_client.hpp \
+ ../../../CubeIDE_Libraries/TCP_Client/tcp_client.hpp \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h \
  ../Core/Inc/stm32f1xx_hal_conf.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h \
@@ -65,10 +65,10 @@ Core/Src/main.o: ../Core/Src/main.cpp \
  ../Middlewares/Third_Party/LwIP/src/include/lwip/prot/udp.h \
  ../Middlewares/Third_Party/LwIP/src/include/lwip/timeouts.h \
  ../LWIP/Target/ethernetif.h \
- D:/my_Projects/Electronic/STM32/F1/CubeIDE/Libraries/ArduinoJson/src/ArduinoJson.h \
- D:/my_Projects/Electronic/STM32/F1/CubeIDE/Libraries/ArduinoJson/src/ArduinoJson.hpp \
- D:/my_Projects/Electronic/STM32/F1/CubeIDE/Libraries/ArduinoJson/src/ArduinoJson/Configuration.hpp
-D:/my_Projects/Electronic/STM32/F1/CubeIDE/Libraries/TCP_Client/tcp_client.hpp:
+ ../../../CubeIDE_Libraries/ArduinoJson/src/ArduinoJson.h \
+ ../../../CubeIDE_Libraries/ArduinoJson/src/ArduinoJson.hpp \
+ ../../../CubeIDE_Libraries/ArduinoJson/src/ArduinoJson/Configuration.hpp
+../../../CubeIDE_Libraries/TCP_Client/tcp_client.hpp:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:
 ../Core/Inc/stm32f1xx_hal_conf.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:
@@ -135,6 +135,6 @@ D:/my_Projects/Electronic/STM32/F1/CubeIDE/Libraries/TCP_Client/tcp_client.hpp:
 ../Middlewares/Third_Party/LwIP/src/include/lwip/prot/udp.h:
 ../Middlewares/Third_Party/LwIP/src/include/lwip/timeouts.h:
 ../LWIP/Target/ethernetif.h:
-D:/my_Projects/Electronic/STM32/F1/CubeIDE/Libraries/ArduinoJson/src/ArduinoJson.h:
-D:/my_Projects/Electronic/STM32/F1/CubeIDE/Libraries/ArduinoJson/src/ArduinoJson.hpp:
-D:/my_Projects/Electronic/STM32/F1/CubeIDE/Libraries/ArduinoJson/src/ArduinoJson/Configuration.hpp:
+../../../CubeIDE_Libraries/ArduinoJson/src/ArduinoJson.h:
+../../../CubeIDE_Libraries/ArduinoJson/src/ArduinoJson.hpp:
+../../../CubeIDE_Libraries/ArduinoJson/src/ArduinoJson/Configuration.hpp:

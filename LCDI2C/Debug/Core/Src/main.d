@@ -35,9 +35,9 @@ Core/Src/main.o: ../Core/Src/main.cpp ../Core/Inc/main.h \
  ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h \
  ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h \
  ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h \
- ../Core/Src/../../../Libraries/DWT_Delay/dwt_stm32_delay.h \
- ../Core/Src/../../../Libraries/LiquidCrystal_I2C/LCD_I2C.hpp \
- ../Core/Src/../../../Libraries/LiquidCrystal_I2C/../DWT_Delay/dwt_stm32_delay.h
+ ../../../CubeIDE_Libraries/LiquidCrystal_I2C/LCD_I2C.hpp \
+ ../../../CubeIDE_Libraries/LiquidCrystal_I2C/../DWT_Delay/dwt_stm32_delay.h \
+ ../../../CubeIDE_Libraries/DWT_Delay/dwt_stm32_delay.h
 ../Core/Inc/main.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:
 ../Core/Inc/stm32f1xx_hal_conf.h:
@@ -76,6 +76,6 @@ Core/Src/main.o: ../Core/Src/main.cpp ../Core/Inc/main.h \
 ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h:
 ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h:
 ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h:
-../Core/Src/../../../Libraries/DWT_Delay/dwt_stm32_delay.h:
-../Core/Src/../../../Libraries/LiquidCrystal_I2C/LCD_I2C.hpp:
-../Core/Src/../../../Libraries/LiquidCrystal_I2C/../DWT_Delay/dwt_stm32_delay.h:
+../../../CubeIDE_Libraries/LiquidCrystal_I2C/LCD_I2C.hpp:
+../../../CubeIDE_Libraries/LiquidCrystal_I2C/../DWT_Delay/dwt_stm32_delay.h:
+../../../CubeIDE_Libraries/DWT_Delay/dwt_stm32_delay.h:
