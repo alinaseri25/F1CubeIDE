@@ -99,8 +99,6 @@ void UartPacket_IdleCallback(UART_HandleTypeDef *huart)
 		return;
 	}
 
-
-
 	DeserializationError error = deserializeJson(inputDoc, jsonBody);
 
 	if(!error)
@@ -195,9 +193,9 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  std::string outputStr,who{"Ali Naseri"};
-  int age{36};
-  double pi{std::numbers::pi};
+  //std::string outputStr,who{"Ali Naseri"};
+  //int age{36};
+  //double pi{std::numbers::pi};
   //outputStr = std::format("Hello {}, your age is {:05}, pi number is : {: 05.5}",who,age,pi);
   while (1)
   {
