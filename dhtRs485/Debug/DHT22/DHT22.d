@@ -1,6 +1,6 @@
 DHT22/DHT22.o: \
- D:/my_Projects/Electronic/STM32/F1/CubeIDE/Libraries/DHT22/DHT22.cpp \
- D:/my_Projects/Electronic/STM32/F1/CubeIDE/Libraries/DHT22/DHT22.hpp \
+ D:/technicalDepartment/software/CubeIDE_Libraries/DHT22/DHT22.cpp \
+ D:/technicalDepartment/software/CubeIDE_Libraries/DHT22/DHT22.hpp \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h \
  ../Core/Inc/stm32f1xx_hal_conf.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h \
@@ -27,8 +27,8 @@ DHT22/DHT22.o: \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h \
- D:/my_Projects/Electronic/STM32/F1/CubeIDE/Libraries/DWT_Delay/dwt_stm32_delay.h
-D:/my_Projects/Electronic/STM32/F1/CubeIDE/Libraries/DHT22/DHT22.hpp:
+ ../../../CubeIDE_Libraries/DWT_Delay/dwt_stm32_delay.h
+D:/technicalDepartment/software/CubeIDE_Libraries/DHT22/DHT22.hpp:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:
 ../Core/Inc/stm32f1xx_hal_conf.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:
@@ -55,4 +55,4 @@ D:/my_Projects/Electronic/STM32/F1/CubeIDE/Libraries/DHT22/DHT22.hpp:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h:
-D:/my_Projects/Electronic/STM32/F1/CubeIDE/Libraries/DWT_Delay/dwt_stm32_delay.h:
+../../../CubeIDE_Libraries/DWT_Delay/dwt_stm32_delay.h:

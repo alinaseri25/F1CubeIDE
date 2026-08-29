@@ -34,17 +34,17 @@
 		<link>
 			<name>DHT22</name>
 			<type>2</type>
-			<location>D:/my_Projects/Electronic/STM32/F1/CubeIDE/Libraries/DHT22</location>
+			<locationURI>$%7BPARENT-2-PROJECT_LOC%7D/CubeIDE_Libraries/DHT22</locationURI>
 		</link>
 		<link>
 			<name>DWT_Delay</name>
 			<type>2</type>
-			<location>D:/my_Projects/Electronic/STM32/F1/CubeIDE/Libraries/DWT_Delay</location>
+			<locationURI>$%7BPARENT-2-PROJECT_LOC%7D/CubeIDE_Libraries/DWT_Delay</locationURI>
 		</link>
 		<link>
 			<name>jsonPacket</name>
 			<type>2</type>
-			<location>D:/my_Projects/Electronic/STM32/F1/CubeIDE/Libraries/jsonPacket</location>
+			<locationURI>$%7BPARENT-2-PROJECT_LOC%7D/CubeIDE_Libraries/jsonPacket</locationURI>
 		</link>
 	</linkedResources>
 </projectDescription>
