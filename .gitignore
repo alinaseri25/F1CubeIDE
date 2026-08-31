@@ -1,0 +1,44 @@
+# ==========================================
+# STM32CubeIDE & Eclipse Multi-Project Ignore
+# ==========================================
+
+# 1. Ignore build output directories in all subprojects
+**/Debug/
+**/Release/
+**/debug/
+**/release/
+
+# 2. Ignore build artifacts (Binaries, Objects, Listings, Dependencies)
+*.o
+*.obj
+*.elf
+*.bin
+*.hex
+*.d
+*.map
+*.su
+*.cyclo
+*.launch
+
+# 3. Ignore Eclipse workspace metadata & local user settings
+.metadata/
+.loadpath
+.cache/
+.settings/language.settings.xml
+*.launch
+*.swp
+*.bak
+*~
+
+# 4. OS-specific files
+.DS_Store
+Thumbs.db
+[Dd]esktop.ini
+
+# ==========================================
+# Whitelist / Keep critical project configs
+# ==========================================
+# Ensure core Eclipse/CubeIDE project configs are tracked
+!.project
+!.cproject
+!*.ioc

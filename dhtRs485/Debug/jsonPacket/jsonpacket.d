@@ -1,7 +1,7 @@
 jsonPacket/jsonpacket.o: \
- D:/technicalDepartment/software/CubeIDE_Libraries/jsonPacket/jsonpacket.cpp \
- D:/technicalDepartment/software/CubeIDE_Libraries/jsonPacket/jsonpacket.hpp \
- D:/technicalDepartment/software/CubeIDE_Libraries/jsonPacket/packetStructs.hpp \
+ D:/my_Projects/Electronic/STM32/F1/cubeIDE/CubeIDE_Libraries/jsonPacket/jsonpacket.cpp \
+ D:/my_Projects/Electronic/STM32/F1/cubeIDE/CubeIDE_Libraries/jsonPacket/jsonpacket.hpp \
+ D:/my_Projects/Electronic/STM32/F1/cubeIDE/CubeIDE_Libraries/jsonPacket/packetStructs.hpp \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h \
  ../Core/Inc/stm32f1xx_hal_conf.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h \
@@ -31,8 +31,8 @@ jsonPacket/jsonpacket.o: \
  ../../../CubeIDE_Libraries/ArduinoJson/src/ArduinoJson.h \
  ../../../CubeIDE_Libraries/ArduinoJson/src/ArduinoJson.hpp \
  ../../../CubeIDE_Libraries/ArduinoJson/src/ArduinoJson/Configuration.hpp
-D:/technicalDepartment/software/CubeIDE_Libraries/jsonPacket/jsonpacket.hpp:
-D:/technicalDepartment/software/CubeIDE_Libraries/jsonPacket/packetStructs.hpp:
+D:/my_Projects/Electronic/STM32/F1/cubeIDE/CubeIDE_Libraries/jsonPacket/jsonpacket.hpp:
+D:/my_Projects/Electronic/STM32/F1/cubeIDE/CubeIDE_Libraries/jsonPacket/packetStructs.hpp:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:
 ../Core/Inc/stm32f1xx_hal_conf.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:

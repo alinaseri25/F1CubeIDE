@@ -203,7 +203,14 @@ int main(void)
 	  sendProcessControl(&packet);
 	  if(HAL_GetTick() >= readSensor)
 	  {
-		  tempHum = sensor.DHT_Read();
+		  sensor.StartRead();
+	  }
+
+	  sensor.Process();
+	  if(sensor.HasNewData())
+	  {
+		  tempHum = sensor.GetData();
+		  sensor.ClearNewData();
 		  readSensor = HAL_GetTick() + 2000;
 	  }
     /* USER CODE END WHILE */
