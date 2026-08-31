@@ -57,7 +57,7 @@ HAL_StatusTypeDef uartErr;
 DHT22 sensor(dht22_GPIO_Port,dht22_Pin);
 Temp_Hum tempHum;
 Packets packet;
-extern uint8_t rxLineBusy;
+extern volatile uint8_t rxLineBusy;
 JsonDocument inputDoc;
 JsonDocument outputDoc;
 /* USER CODE END PV */
@@ -90,7 +90,6 @@ void UartPacket_IdleCallback(UART_HandleTypeDef *huart)
 	uint8_t *jsonBody = NULL,*payload = NULL;
 	uint32_t jsonLen,payloadLen;
 	packet.readRxPacket(huart, &jsonBody, &jsonLen, &payload, &payloadLen);
-	rxLineBusy = 0;
 	HAL_GPIO_WritePin(LED1_GPIO_Port, LED1_Pin, GPIO_PIN_RESET);
 	HAL_GPIO_TogglePin(LED0_GPIO_Port, LED0_Pin);
 
@@ -179,16 +178,17 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_DMA_Init();
-  MX_IWDG_Init();
+  //MX_IWDG_Init();
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
-  __HAL_IWDG_START(&hiwdg);
-  HAL_IWDG_Refresh(&hiwdg);
+//  __HAL_IWDG_START(&hiwdg);
+//  HAL_IWDG_Refresh(&hiwdg);
   packet.setRxLoopState(true);
   HAL_UART_Receive_DMA(&huart1, packet.getrxBuffer(), packet.getrxBufferSize());
   __HAL_UART_ENABLE_IT(&huart1, UART_IT_IDLE);
   nextLedTime = HAL_GetTick() + 500;
   readSensor = HAL_GetTick() + 2000;
+  rxLineBusy = 0;
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -197,26 +197,50 @@ int main(void)
   //int age{36};
   //double pi{std::numbers::pi};
   //outputStr = std::format("Hello {}, your age is {:05}, pi number is : {: 05.5}",who,age,pi);
-  while (1)
-  {
-	  HAL_IWDG_Refresh(&hiwdg);
-	  sendProcessControl(&packet);
-	  if(HAL_GetTick() >= readSensor)
-	  {
-		  sensor.StartRead();
-	  }
+	outputDoc["type"] = Response;
+	outputDoc["state"] = ok;
+	outputDoc["name"] = "MB";
+	packet.addTxPacket(Medium, &outputDoc);
+	while (1)
+	{
+		sendProcessControl(&packet);
 
-	  sensor.Process();
-	  if(sensor.HasNewData())
-	  {
-		  tempHum = sensor.GetData();
-		  sensor.ClearNewData();
-		  readSensor = HAL_GetTick() + 2000;
-	  }
-    /* USER CODE END WHILE */
+		if(HAL_GetTick() >= nextLedTime)
+		{
+			HAL_GPIO_TogglePin(LED0_GPIO_Port, LED0_Pin);
+			nextLedTime = HAL_GetTick() + 500;
+		}
 
-    /* USER CODE BEGIN 3 */
-  }
+		if(HAL_GetTick() >= readSensor)
+		{
+			sensor.StartRead();
+			readSensor = HAL_GetTick() + 2000;
+			outputDoc.clear();
+			outputDoc["type"] = Response;
+			outputDoc["state"] = ok;
+			outputDoc["name"] = "MB";
+			outputDoc["nextRead"] = readSensor;
+			packet.addTxPacket(Medium, &outputDoc);
+			readSensor = HAL_GetTick() + 2000;
+		}
+
+		sensor.Process();
+		if(sensor.HasNewData())
+		{
+			tempHum = sensor.GetData();
+			sensor.ClearNewData();
+			outputDoc.clear();
+			outputDoc["type"] = Response;
+			outputDoc["state"] = ok;
+			outputDoc["name"] = "MB";
+			outputDoc["temp"] = tempHum.Temp;
+			outputDoc["hum"] = tempHum.Hum;
+			packet.addTxPacket(Medium, &outputDoc);
+		}
+		/* USER CODE END WHILE */
+
+		/* USER CODE BEGIN 3 */
+	}
   /* USER CODE END 3 */
 }
 
@@ -403,7 +427,7 @@ void sendProcessControl(Packets *packet)
 		{
 			return;
 		}
-		if(rxLineBusy == 0 && (HAL_GPIO_ReadPin(rs485En_GPIO_Port, rs485En_Pin) == GPIO_PIN_RESET))
+		if((HAL_GPIO_ReadPin(rs485En_GPIO_Port, rs485En_Pin) == GPIO_PIN_RESET) && rxLineBusy == 0)//
 		{
 			currentPacket->state = WaitToSent;
 			if(rs485OneSendData(currentPacket->txBuffer, currentPacket->packetLen) != HAL_OK)
@@ -452,13 +476,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
   /* USER CODE BEGIN Callback 1 */
   if (htim->Instance == TIM4)
   {
-	  if(HAL_GetTick() >= nextLedTime)
-	  {
-		  nextLedTime = HAL_GetTick() + 500;
-		  //HAL_GPIO_TogglePin(LED0_GPIO_Port, LED0_Pin);
-//		  sprintf(buffer,"Time",HAL_GetTick()/1000);
-//		  uartErr = rs485OneSendData((uint8_t *)buffer, 0);
-	  }
+
   }
   /* USER CODE END Callback 1 */
 }

@@ -251,9 +251,12 @@ void TIM4_IRQHandler(void)
 void USART1_IRQHandler(void)
 {
   /* USER CODE BEGIN USART1_IRQn 0 */
-	rxLineBusy = 1;
+	if (__HAL_UART_GET_FLAG(&huart1, UART_FLAG_RXNE)) {
+		rxLineBusy = 1;
+	}
 	if (__HAL_UART_GET_FLAG(&huart1, UART_FLAG_IDLE)) {
 		__HAL_UART_CLEAR_IDLEFLAG(&huart1);
+		rxLineBusy = 0;
 		UartPacket_IdleCallback(&huart1);
 	}
   /* USER CODE END USART1_IRQn 0 */
