@@ -2,6 +2,9 @@
 # STM32CubeIDE & Eclipse Multi-Project Ignore
 # ==========================================
 
+# STM32CubeIDE / Eclipse settings
+.settings/
+
 # 1. Ignore build output directories in all subprojects
 **/Debug/
 **/Release/
