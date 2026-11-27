@@ -101,12 +101,12 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_DMA_Init();
-  //MX_IWDG_Init();
+  MX_IWDG_Init();
   MX_UART5_Init();
   MX_USART3_UART_Init();
   /* USER CODE BEGIN 2 */
-  //__HAL_IWDG_START(&hiwdg);
-  //HAL_IWDG_Refresh(&hiwdg);
+  __HAL_IWDG_START(&hiwdg);
+  HAL_IWDG_Refresh(&hiwdg);
   timeToStartApp = HAL_GetTick() + 2000;
   timeToBlinking = HAL_GetTick();
   /* USER CODE END 2 */
@@ -115,7 +115,7 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  //HAL_IWDG_Refresh(&hiwdg);
+	  HAL_IWDG_Refresh(&hiwdg);
 	  if(HAL_GetTick() >= timeToBlinking)
 	  {
 		  timeToBlinking = HAL_GetTick() + 500;
@@ -204,7 +204,7 @@ static void MX_IWDG_Init(void)
   /* USER CODE END IWDG_Init 1 */
   hiwdg.Instance = IWDG;
   hiwdg.Init.Prescaler = IWDG_PRESCALER_64;
-  hiwdg.Init.Reload = 3200;
+  hiwdg.Init.Reload = 4000;
   if (HAL_IWDG_Init(&hiwdg) != HAL_OK)
   {
     Error_Handler();
@@ -378,47 +378,47 @@ static void MX_GPIO_Init(void)
 /* USER CODE BEGIN 4 */
 void JumpToApplication(void)
 {
-    // 1. Check the validity of the application address and stack pointer.
-    // The first word of the vector table must point to a valid RAM address (e.g., the start of RAM at 0x20000000).
-    uint32_t appStack = *(__IO uint32_t*)APPLICATION_ADDRESS;
-
-    if ((appStack & 0x2FFE0000) == 0x20000000)
+    // ۱. بررسی معتبر بودن آدرس استک پوینتر برنامه‌ی اصلی (باید در محدوده RAM فلش F107 باشد)
+    // STM32F107RCTx دارای 64 کیلوبایت رم از 0x20000000 تا 0x20010000 است.
+    uint32_t appStack = *(__IO uint32_t *)APPLICATION_ADDRESS;
+    if ((appStack < 0x20000000U) || (appStack > 0x20010000U))
     {
-        // 2. Disable all interrupts in the NVIC and clear the pending interrupt flags.
-        __disable_irq();
-
-        // Disable SysTick and clear its configuration.
-        SysTick->CTRL = 0;
-        SysTick->LOAD = 0;
-        SysTick->VAL  = 0;
-
-        // Clear pending interrupts in the NVIC registers.
-        for (int i = 0; i < 8; i++)
-        {
-            NVIC->ICER[i] = 0xFFFFFFFF;
-            NVIC->ICPR[i] = 0xFFFFFFFF;
-        }
-
-        // 3. Read the application's Reset_Handler address from the second word of its vector table (address + 4).
-        uint32_t appEntryAddr = *(__IO uint32_t*)(APPLICATION_ADDRESS + 4);
-        pFunction jumpToApp = (pFunction)appEntryAddr;
-
-        // 4. Set the Cortex-M3 VTOR to the application's vector table.
-        // This is essential for routing exceptions and interrupts to the application.
-        SCB->VTOR = APPLICATION_ADDRESS;
-
-        // 5. Set the application's Main Stack Pointer (MSP).
-        __set_MSP(appStack);
-
-        // 6. Jump to the application's Reset_Handler.
-        jumpToApp();
+        return; // آدرس استک نامعتبر است، پرش انجام نمی‌شود
     }
-    else
-    {
-        // If the stack pointer is invalid, remain in the bootloader or reset the system.
-        // Handle the error here or reset the system.
-        NVIC_SystemReset();
-    }
+
+    // ۲. خواندن آدرس Reset_Handler برنامه‌ی اصلی (کلمه‌ی دوم جدول بردارها)
+    uint32_t appResetHandler = *(__IO uint32_t *)(APPLICATION_ADDRESS + 4U);
+
+    // ۳. غیرفعال کردن تمامی وقفه ها (Global Interrupts)
+    __disable_irq();
+
+    // ۴. توقف کامل SysTick و پاک کردن لبه‌های Pending آن
+    SysTick->CTRL = 0U;
+    SysTick->LOAD = 0U;
+    SysTick->VAL  = 0U;
+    SCB->ICSR     = SCB_ICSR_PENDSTCLR_Msk;
+
+    // ۵. غیرفعال کردن و پاکسازی تمام وقفه‌های خارجی در NVIC (برای F107 دو رجیستر کافی است)
+    NVIC->ICER[0] = 0xFFFFFFFFU;
+    NVIC->ICER[1] = 0xFFFFFFFFU;
+    NVIC->ICPR[0] = 0xFFFFFFFFU;
+    NVIC->ICPR[1] = 0xFFFFFFFFU;
+
+    // ۶. غیرفعال کردن پریفیرال‌های فعال شده در بوت‌لودر (مانند دی‌اِینیت کردن HAL)
+    HAL_RCC_DeInit();
+    HAL_DeInit();
+
+    // ۷. تنظیم دقیق Vector Table Offset Register (VTOR) روی آدرس برنامه‌ی اصلی
+    SCB->VTOR = APPLICATION_ADDRESS;
+    __DSB();
+    __ISB();
+
+    // ۸. تنظیم Main Stack Pointer (MSP) برنامه‌ی اصلی
+    __set_MSP(appStack);
+
+    // ۹. پرش قطعی و نهایی به Reset_Handler برنامه‌ی اصلی
+    pFunction jumpToApp = (pFunction)appResetHandler;
+    jumpToApp();
 }
 /* USER CODE END 4 */
 
