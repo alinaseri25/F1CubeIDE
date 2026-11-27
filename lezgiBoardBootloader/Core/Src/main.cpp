@@ -33,7 +33,7 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-
+#define APPLICATION_ADDRESS     (0x08008000U)
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -51,7 +51,7 @@ DMA_HandleTypeDef hdma_usart3_rx;
 
 DMA_HandleTypeDef hdma_memtomem_dma1_channel1;
 /* USER CODE BEGIN PV */
-
+uint32_t timeToStartApp,timeToBlinking;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -62,7 +62,8 @@ static void MX_IWDG_Init(void);
 static void MX_UART5_Init(void);
 static void MX_USART3_UART_Init(void);
 /* USER CODE BEGIN PFP */
-
+typedef void (*pFunction)(void);
+void JumpToApplication(void);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -100,17 +101,35 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_DMA_Init();
-  MX_IWDG_Init();
+  //MX_IWDG_Init();
   MX_UART5_Init();
   MX_USART3_UART_Init();
   /* USER CODE BEGIN 2 */
-
+  //__HAL_IWDG_START(&hiwdg);
+  //HAL_IWDG_Refresh(&hiwdg);
+  timeToStartApp = HAL_GetTick() + 2000;
+  timeToBlinking = HAL_GetTick();
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+	  //HAL_IWDG_Refresh(&hiwdg);
+	  if(HAL_GetTick() >= timeToBlinking)
+	  {
+		  timeToBlinking = HAL_GetTick() + 500;
+		  HAL_GPIO_TogglePin(LED0_GPIO_Port, LED0_Pin);
+		  HAL_GPIO_TogglePin(LED1_GPIO_Port, LED1_Pin);
+		  HAL_GPIO_TogglePin(LED2_GPIO_Port, LED2_Pin);
+		  HAL_GPIO_TogglePin(LED3_GPIO_Port, LED3_Pin);
+		  HAL_GPIO_TogglePin(LED4_GPIO_Port, LED4_Pin);
+		  HAL_GPIO_TogglePin(LED5_GPIO_Port, LED5_Pin);
+	  }
+	  if(HAL_GetTick() >= timeToStartApp)
+	  {
+		  JumpToApplication();
+	  }
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -184,8 +203,8 @@ static void MX_IWDG_Init(void)
 
   /* USER CODE END IWDG_Init 1 */
   hiwdg.Instance = IWDG;
-  hiwdg.Init.Prescaler = IWDG_PRESCALER_32;
-  hiwdg.Init.Reload = 2500;
+  hiwdg.Init.Prescaler = IWDG_PRESCALER_64;
+  hiwdg.Init.Reload = 3200;
   if (HAL_IWDG_Init(&hiwdg) != HAL_OK)
   {
     Error_Handler();
@@ -357,7 +376,50 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
+void JumpToApplication(void)
+{
+    // 1. Check the validity of the application address and stack pointer.
+    // The first word of the vector table must point to a valid RAM address (e.g., the start of RAM at 0x20000000).
+    uint32_t appStack = *(__IO uint32_t*)APPLICATION_ADDRESS;
 
+    if ((appStack & 0x2FFE0000) == 0x20000000)
+    {
+        // 2. Disable all interrupts in the NVIC and clear the pending interrupt flags.
+        __disable_irq();
+
+        // Disable SysTick and clear its configuration.
+        SysTick->CTRL = 0;
+        SysTick->LOAD = 0;
+        SysTick->VAL  = 0;
+
+        // Clear pending interrupts in the NVIC registers.
+        for (int i = 0; i < 8; i++)
+        {
+            NVIC->ICER[i] = 0xFFFFFFFF;
+            NVIC->ICPR[i] = 0xFFFFFFFF;
+        }
+
+        // 3. Read the application's Reset_Handler address from the second word of its vector table (address + 4).
+        uint32_t appEntryAddr = *(__IO uint32_t*)(APPLICATION_ADDRESS + 4);
+        pFunction jumpToApp = (pFunction)appEntryAddr;
+
+        // 4. Set the Cortex-M3 VTOR to the application's vector table.
+        // This is essential for routing exceptions and interrupts to the application.
+        SCB->VTOR = APPLICATION_ADDRESS;
+
+        // 5. Set the application's Main Stack Pointer (MSP).
+        __set_MSP(appStack);
+
+        // 6. Jump to the application's Reset_Handler.
+        jumpToApp();
+    }
+    else
+    {
+        // If the stack pointer is invalid, remain in the bootloader or reset the system.
+        // Handle the error here or reset the system.
+        NVIC_SystemReset();
+    }
+}
 /* USER CODE END 4 */
 
 /**
