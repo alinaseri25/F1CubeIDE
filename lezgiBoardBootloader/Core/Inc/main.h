@@ -36,7 +36,18 @@ extern "C" {
 
 /* Exported types ------------------------------------------------------------*/
 /* USER CODE BEGIN ET */
+#define FLASH_START_ADDRESS     0x08000000U
+#define FLASH_END_ADDRESS       0x08040000U
+#define SRAM_START_ADDRESS      0x20000000U
+#define SRAM_END_ADDRESS        0x20010000U
 
+typedef enum
+{
+    APP_JUMP_OK = 0,
+    APP_JUMP_INVALID_STACK,
+    APP_JUMP_INVALID_RESET_HANDLER,
+    APP_JUMP_RETURNED_UNEXPECTEDLY
+} AppJumpStatus_t;
 /* USER CODE END ET */
 
 /* Exported constants --------------------------------------------------------*/

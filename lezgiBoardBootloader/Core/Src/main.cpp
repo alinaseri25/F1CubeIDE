@@ -63,7 +63,8 @@ static void MX_UART5_Init(void);
 static void MX_USART3_UART_Init(void);
 /* USER CODE BEGIN PFP */
 typedef void (*pFunction)(void);
-void JumpToApplication(void);
+AppJumpStatus_t JumpToApplication(void);
+HAL_StatusTypeDef Application_IsValid(void);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -203,8 +204,8 @@ static void MX_IWDG_Init(void)
 
   /* USER CODE END IWDG_Init 1 */
   hiwdg.Instance = IWDG;
-  hiwdg.Init.Prescaler = IWDG_PRESCALER_64;
-  hiwdg.Init.Reload = 4000;
+  hiwdg.Init.Prescaler = IWDG_PRESCALER_32;
+  hiwdg.Init.Reload = 2500;
   if (HAL_IWDG_Init(&hiwdg) != HAL_OK)
   {
     Error_Handler();
@@ -376,50 +377,93 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
-void JumpToApplication(void)
+AppJumpStatus_t JumpToApplication(void)
 {
-    // ۱. بررسی معتبر بودن آدرس استک پوینتر برنامه‌ی اصلی (باید در محدوده RAM فلش F107 باشد)
-    // STM32F107RCTx دارای 64 کیلوبایت رم از 0x20000000 تا 0x20010000 است.
-    uint32_t appStack = *(__IO uint32_t *)APPLICATION_ADDRESS;
-    if ((appStack < 0x20000000U) || (appStack > 0x20010000U))
+    uint32_t appStack;
+    uint32_t appResetHandler;
+    pFunction jumpToApp;
+
+    /* Read the initial MSP from the application vector table */
+    appStack = *(__IO uint32_t *)APPLICATION_ADDRESS;
+
+    /* Check whether the stack pointer is inside SRAM */
+    if ((appStack < SRAM_START_ADDRESS) || (appStack > SRAM_END_ADDRESS))
     {
-        return; // آدرس استک نامعتبر است، پرش انجام نمی‌شود
+        return APP_JUMP_INVALID_STACK;
     }
 
-    // ۲. خواندن آدرس Reset_Handler برنامه‌ی اصلی (کلمه‌ی دوم جدول بردارها)
-    uint32_t appResetHandler = *(__IO uint32_t *)(APPLICATION_ADDRESS + 4U);
+    /* Read the reset handler address */
+    appResetHandler = *(__IO uint32_t *)(APPLICATION_ADDRESS + 4U);
 
-    // ۳. غیرفعال کردن تمامی وقفه ها (Global Interrupts)
+    /* Check whether the reset handler is valid */
+    if ((appResetHandler < APPLICATION_ADDRESS) ||
+        (appResetHandler >= FLASH_END_ADDRESS) ||
+        ((appResetHandler & 0x1U) == 0U))
+    {
+        return APP_JUMP_INVALID_RESET_HANDLER;
+    }
+
+    /* Disable global interrupts */
     __disable_irq();
 
-    // ۴. توقف کامل SysTick و پاک کردن لبه‌های Pending آن
+    /* Stop SysTick and clear pending state */
     SysTick->CTRL = 0U;
     SysTick->LOAD = 0U;
     SysTick->VAL  = 0U;
-    SCB->ICSR     = SCB_ICSR_PENDSTCLR_Msk;
+    SCB->ICSR = SCB_ICSR_PENDSTCLR_Msk;
 
-    // ۵. غیرفعال کردن و پاکسازی تمام وقفه‌های خارجی در NVIC (برای F107 دو رجیستر کافی است)
+    /* Disable and clear all NVIC interrupt lines */
     NVIC->ICER[0] = 0xFFFFFFFFU;
     NVIC->ICER[1] = 0xFFFFFFFFU;
     NVIC->ICPR[0] = 0xFFFFFFFFU;
     NVIC->ICPR[1] = 0xFFFFFFFFU;
 
-    // ۶. غیرفعال کردن پریفیرال‌های فعال شده در بوت‌لودر (مانند دی‌اِینیت کردن HAL)
+    /* Reset HAL and RCC state */
     HAL_RCC_DeInit();
     HAL_DeInit();
 
-    // ۷. تنظیم دقیق Vector Table Offset Register (VTOR) روی آدرس برنامه‌ی اصلی
+    /* Switch vector table to application space */
     SCB->VTOR = APPLICATION_ADDRESS;
     __DSB();
     __ISB();
 
-    // ۸. تنظیم Main Stack Pointer (MSP) برنامه‌ی اصلی
+    /* Set MSP and jump */
     __set_MSP(appStack);
-
-    // ۹. پرش قطعی و نهایی به Reset_Handler برنامه‌ی اصلی
-    pFunction jumpToApp = (pFunction)appResetHandler;
+    jumpToApp = (pFunction)appResetHandler;
     jumpToApp();
+
+    /* If control returns, jump failed */
+    return APP_JUMP_RETURNED_UNEXPECTEDLY;
 }
+
+HAL_StatusTypeDef Application_IsValid(void)
+{
+    uint32_t appStack;
+    uint32_t appResetHandler;
+
+    /* Read MSP from application vector table */
+    appStack = *(__IO uint32_t *)APPLICATION_ADDRESS;
+
+    /* Validate stack pointer */
+    if ((appStack < SRAM_START_ADDRESS) || (appStack > SRAM_END_ADDRESS))
+    {
+        return HAL_ERROR;
+    }
+
+    /* Read reset handler */
+    appResetHandler = *(__IO uint32_t *)(APPLICATION_ADDRESS + 4U);
+
+    /* Validate reset handler */
+    if ((appResetHandler < APPLICATION_ADDRESS) ||
+        (appResetHandler >= FLASH_END_ADDRESS) ||
+        ((appResetHandler & 0x1U) == 0U))
+    {
+        return HAL_ERROR;
+    }
+
+    return HAL_OK;
+}
+
 /* USER CODE END 4 */
 
 /**
