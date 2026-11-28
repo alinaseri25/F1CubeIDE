@@ -129,7 +129,11 @@ int main(void)
 	  }
 	  if(HAL_GetTick() >= timeToStartApp)
 	  {
-		  JumpToApplication();
+		  if(Application_IsValid() == HAL_OK)
+		  {
+			  JumpToApplication();
+		  }
+		  timeToStartApp = HAL_GetTick() + 2000;
 	  }
     /* USER CODE END WHILE */
 
